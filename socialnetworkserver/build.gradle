@@ -1,0 +1,26 @@
+plugins {
+  id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  junitVersion = '5.9.2'
+}
+
+dependencies {
+
+  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+  implementation("org.postgresql:postgresql:42.6.0")
+}
+
+test {
+  useJUnitPlatform()
+}
